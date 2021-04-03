@@ -4,6 +4,13 @@ var app = angular.module('MyApp', ["ngStorage","ui.grid"])
 $scope.count=0;
           $scope.gridOptions = {
 
+        
+           paginationPageSizes: [5, 10, 20],
+           paginationPageSize: 5,
+
+
+
+
           enableFiltering: true,
 
 
@@ -11,7 +18,7 @@ $scope.count=0;
 
           { field: 'Name' },
           { field: 'Email' },
-          { field: 'Age',enableSorting: false },
+          { field: 'Age',enableSorting: true  },
           { field: 'University' },
           { field: 'Department' },
           { field: 'Password' },
@@ -22,10 +29,7 @@ $scope.count=0;
           onRegisterApi: function (gridApi) {
 
           $scope.grid1Api = gridApi;
-
-          }
-
-
+           }
 
           };
             var StudentList=[];
@@ -56,6 +60,10 @@ $scope.count=0;
                 console.log(StudentList);
 
                 $localStorage.LocalMessage=StudentList;
+
+                  console.log("message")
+
+                  console.log($localStorage.LocalMessage);
 
                 $scope.gridOptions.data =$localStorage.LocalMessage;
 
