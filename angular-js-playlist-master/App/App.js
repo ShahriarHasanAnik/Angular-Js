@@ -1,5 +1,5 @@
 var app = angular.module('MyApp', ["ngStorage","ui.grid",'ui.grid.edit', 'ui.grid.cellNav'])
-        app.controller('MyController', function ($scope, $localStorage, $sessionStorage, $window) {
+        app.controller('MyController', function ($scope, $localStorage, $sessionStorage, $window, $http) {
 
 $scope.count=0;
           $scope.gridOptions = {
@@ -32,8 +32,12 @@ $scope.count=0;
           };
 
             var StudentList=[];
-              $scope.gridOptions.data =$localStorage.LocalMessage;
-              console.log(  $scope.gridOptions.data );
+            if($localStorage.LocalMessage.length>0)
+            {
+            $scope.gridOptions.data =$localStorage.LocalMessage;
+            console.log(  $scope.gridOptions.data );
+            }
+
 
             $scope.Save = function () {
 
@@ -51,10 +55,50 @@ $scope.count=0;
                 console.log(StudentList);
                 $localStorage.LocalMessage=StudentList;
                 //console.log("message")
-                $scope.gridOptions.data =$localStorage.LocalMessage;
-
-
+               $scope.gridOptions.data =$localStorage.LocalMessage;
               }
+
+
+               $scope.gridOptions1 = {
+
+
+                         paginationPageSizes: [5, 10, 20],
+                         paginationPageSize: 5,
+                         enableFiltering: true,
+                         showGridFooter: true,
+                         enableGridMenu: true,
+
+
+                        columnDefs: [
+
+                        { field: 'Price',enableCellEdit: true },
+                        { field: 'Action',enableCellEdit: true },
+
+
+                        ],
+
+                        onRegisterApi: function (gridApi) {
+
+                        $scope.grid1Api = gridApi;
+                         }
+
+                        };
+
+
+             $http({
+
+             method: 'GET',
+
+             url: 'https://www.ag-grid.com/example-assets/row-data.json'
+
+             }).then(function success(response) {
+
+             $scope.gridOptions1.data = response.data;
+
+
+             }, function error(response) {
+
+             });
 
 
 
