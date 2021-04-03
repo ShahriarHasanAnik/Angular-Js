@@ -71,8 +71,9 @@ $scope.count=0;
 
                         columnDefs: [
 
-                        { field: 'Price',enableCellEdit: true },
-                        { field: 'Action',enableCellEdit: true },
+                        { field: 'make',enableCellEdit: true },
+                        { field: 'model',enableCellEdit: true },
+                          { field: 'price',enableCellEdit: true },
 
 
                         ],
@@ -85,24 +86,27 @@ $scope.count=0;
                         };
 
 
-             $http({
-
-             method: 'GET',
-
-             url: 'https://www.ag-grid.com/example-assets/row-data.json'
-
-             }).then(function success(response) {
-
-             $scope.gridOptions1.data = response.data;
-
-
-             }, function error(response) {
-
-             });
 
 
 
                $scope.Get = function () {
+                  $http({
+
+                            method: 'GET',
+
+                            url: 'https://www.ag-grid.com/example-assets/row-data.json'
+
+                            }).then(function success(response) {
+
+                            $scope.gridOptions1.data = response.data;
+
+                            console.log( $scope.gridOptions1.data)
+
+
+                            }, function error(response) {
+
+                            });
+
 
                           }
 
