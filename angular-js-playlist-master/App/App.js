@@ -1,4 +1,4 @@
-var app = angular.module('MyApp', ["ngStorage","ui.grid"])
+var app = angular.module('MyApp', ["ngStorage","ui.grid",'ui.grid.edit', 'ui.grid.cellNav'])
         app.controller('MyController', function ($scope, $localStorage, $sessionStorage, $window) {
 
 $scope.count=0;
@@ -8,17 +8,19 @@ $scope.count=0;
            paginationPageSizes: [5, 10, 20],
            paginationPageSize: 5,
            enableFiltering: true,
+           showGridFooter: true,
+           enableGridMenu: true,
 
 
           columnDefs: [
 
-          { field: 'Name' },
-          { field: 'Email' },
-          { field: 'Age',enableSorting: true  },
-          { field: 'University' },
-          { field: 'Department' },
-          { field: 'Password' },
-          { field: 'Hobby' },
+          { field: 'Name',enableCellEdit: true },
+          { field: 'Email',enableCellEdit: true },
+          { field: 'Age',enableSorting: true,enableCellEdit: true },
+          { field: 'University',enableCellEdit: true },
+          { field: 'Department',enableCellEdit: true },
+          { field: 'Password',enableCellEdit: true },
+          { field: 'Hobby',enableCellEdit: true},
 
           ],
 
@@ -71,6 +73,5 @@ $scope.count=0;
                $scope.Get = function () {
 
                           }
-
 
         });
