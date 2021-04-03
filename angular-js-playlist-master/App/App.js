@@ -4,14 +4,10 @@ var app = angular.module('MyApp', ["ngStorage","ui.grid"])
 $scope.count=0;
           $scope.gridOptions = {
 
-        
+
            paginationPageSizes: [5, 10, 20],
            paginationPageSize: 5,
-
-
-
-
-          enableFiltering: true,
+           enableFiltering: true,
 
 
           columnDefs: [
