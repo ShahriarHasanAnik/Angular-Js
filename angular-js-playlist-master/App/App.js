@@ -30,18 +30,14 @@ $scope.count=0;
            }
 
           };
+
             var StudentList=[];
-            var StudentList1=[];
+              $scope.gridOptions.data =$localStorage.LocalMessage;
+              console.log(  $scope.gridOptions.data );
 
             $scope.Save = function () {
 
             var StudentObj= {};
-
-
-
-
-
-
 
                 StudentObj["Name"]=$scope.name;
                 StudentObj["Email"]=$scope.email;
@@ -50,12 +46,11 @@ $scope.count=0;
                 StudentObj["Department"]=$scope.department;
                 StudentObj["Password"]=$scope.password;
                 StudentObj["Hobby"]=$scope.hobby;
-                console.log(StudentObj);
+                //console.log(StudentObj);
                 StudentList.push (StudentObj);
                 console.log(StudentList);
                 $localStorage.LocalMessage=StudentList;
-                console.log("message")
-                console.log($localStorage.LocalMessage);
+                //console.log("message")
                 $scope.gridOptions.data =$localStorage.LocalMessage;
 
 
