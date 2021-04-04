@@ -1,8 +1,10 @@
 var app = angular.module('MyApp', ["ngStorage","ui.grid",'ui.grid.edit', 'ui.grid.cellNav'])
-        app.controller('MyController', function ($scope, $localStorage, $sessionStorage, $window, $http) {
+        app.controller('MyController', function ($scope, $localStorage, $sessionStorage, $window, $http,uiGridConstants ) {
 
 $scope.count=0;
           $scope.gridOptions = {
+
+          showColumnFooter: true,
 
 
            paginationPageSizes: [5, 10, 20],
@@ -10,13 +12,14 @@ $scope.count=0;
            enableFiltering: true,
            showGridFooter: true,
            enableGridMenu: true,
+              showColumnFooter: true,
 
 
           columnDefs: [
 
           { field: 'Name',enableCellEdit: true },
           { field: 'Email',enableCellEdit: true },
-          { field: 'Age',enableSorting: true,enableCellEdit: true },
+          { field: 'Age',enableSorting: true,enableCellEdit: true  },
           { field: 'University',enableCellEdit: true },
           { field: 'Department',enableCellEdit: true },
           { field: 'Password',enableCellEdit: true },
@@ -27,11 +30,12 @@ $scope.count=0;
           onRegisterApi: function (gridApi) {
 
           $scope.grid1Api = gridApi;
+
            }
 
           };
-
             var StudentList=[];
+
             if($localStorage.LocalMessage.length>0)
             {
             $scope.gridOptions.data =$localStorage.LocalMessage;
@@ -42,6 +46,7 @@ $scope.count=0;
             $scope.Save = function () {
 
             var StudentObj= {};
+
 
                 StudentObj["Name"]=$scope.name;
                 StudentObj["Email"]=$scope.email;
@@ -60,7 +65,7 @@ $scope.count=0;
 
 
                $scope.gridOptions1 = {
-
+                           showColumnFooter: true,
 
                          paginationPageSizes: [5, 10, 20],
                          paginationPageSize: 5,
@@ -73,7 +78,7 @@ $scope.count=0;
 
                         { field: 'make',enableCellEdit: true },
                         { field: 'model',enableCellEdit: true },
-                          { field: 'price',enableCellEdit: true },
+                          { field: 'price',enableCellEdit: true,aggregationType: uiGridConstants.aggregationTypes.sum, width: '13%' },
 
 
                         ],
@@ -109,5 +114,8 @@ $scope.count=0;
 
 
                           }
+
+
+
 
         });
