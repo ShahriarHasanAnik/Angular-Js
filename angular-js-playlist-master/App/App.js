@@ -19,7 +19,8 @@ $scope.count=0;
 
           { field: 'Name',enableCellEdit: true },
           { field: 'Email',enableCellEdit: true },
-          { field: 'Age',enableSorting: true,enableCellEdit: true  },
+          { field: 'Age',enableSorting: true,enableCellEdit: true ,aggregationType: uiGridConstants.aggregationTypes.sum, width: '13%' },
+
           { field: 'University',enableCellEdit: true },
           { field: 'Department',enableCellEdit: true },
           { field: 'Password',enableCellEdit: true },
