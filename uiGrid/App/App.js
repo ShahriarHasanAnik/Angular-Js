@@ -2,7 +2,6 @@ var app = angular.module('MyApp', ["ngStorage", "ui.grid", 'ui.grid.edit', 'ui.g
 app.controller('MyController', function($scope, $localStorage, $sessionStorage, $window, $http, uiGridConstants) {
 
 // Build the chart
-
   $scope.count = 0;
   $scope.gridOptions = {
 
