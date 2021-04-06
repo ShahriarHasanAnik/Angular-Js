@@ -29,17 +29,18 @@
 <body ng-app="MyApp" ng-controller="MyController">
 
 
-    <div class="mx-auto" style="width: 600px;">
-        <div class="float-left">
-            <h2> Student Information </h2>
-        </div>
-        <div class="float-right">
-            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Add Student
-            </button>
-        </div>
+<div class="mx-auto" style="width: 600px;">
+    <div class="float-left">
+        <h2> Student Information </h2>
     </div>
+    <div class="float-right">
+        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Add Student
+        </button>
+    </div>
+</div>
 
-
+<br>
+<br>
 <br>
 <br>
 <!-- Modal -->
@@ -58,7 +59,7 @@
                     <div class="d-flex justify-content-center">
                         <h3>Student Information</h3>
                     </div>
-                    <div class="mx-auto" style="width: 500px;" id="SaveDataModule">
+                    <div class="mx-auto" style="width: 400px;" id="SaveDataModule">
                         <div class="form-group row">
                             <label for="inputEmail3" class="col-sm-2 col-form-label">Name</label>
                             <div class="col-sm-10">
@@ -77,7 +78,7 @@
                     <br>
 
 
-                    <div class="mx-auto" style="width: 500px;">
+                    <div class="mx-auto" style="width: 400px;">
                         <div class="form-group row">
                             <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
                             <div class="col-sm-10">
@@ -91,7 +92,7 @@
                         </div>
                     </div>
                     <br>
-                    <div class="mx-auto" style="width: 500px;">
+                    <div class="mx-auto" style="width: 400px;">
                         <div class="form-group row">
                             <label for="inputEmail3" class="col-sm-2 col-form-label">Age</label>
                             <div class="col-sm-10">
@@ -104,7 +105,7 @@
                         </div>
                     </div>
                     <br>
-                    <div class="mx-auto" style="width: 500px;">
+                    <div class="mx-auto" style="width: 400px;">
                         <div class="form-group row">
                             <label for="inputEmail3" class="col-sm-2 col-form-label">Uni</label>
                             <div class="col-sm-10">
@@ -120,7 +121,7 @@
                     </div>
                     <br>
 
-                    <div class="mx-auto" style="width: 500px;">
+                    <div class="mx-auto" style="width: 400px;">
 
                         <div class="form-group row">
                             <label for="inputEmail3" class="col-sm-2 col-form-label">Dept</label>
@@ -137,7 +138,7 @@
                     </div>
                     <br>
 
-                    <div class="mx-auto" style="width: 500px;">
+                    <div class="mx-auto" style="width: 400px;">
 
                         <div class="form-group row">
                             <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
@@ -170,26 +171,26 @@
                     <br>
 
                     <br>
-                    <div class="mx-auto" style="width: 500px;">
 
-                        <div class="form-group row">
-                            <div class="col-sm-10">
-                                <input type="button" ng-disabled="myForm.name.$dirty && myForm.name.$invalid ||
-      myForm.email.$dirty && myForm.email.$invalid ||myForm.age.$dirty && myForm.age.$invalid ||myForm.university.$dirty && myForm.university.$invalid
-       ||myForm.department.$dirty && myForm.department.$invalid ||myForm.password.$dirty && myForm.password.$invalid"
-                                       class="btn btn-primary" value="Save" ng-click="Save()"/>
-                                <input type="button" class="btn btn-primary" value="Get" ng-click="Get()"/>
-                                <input class="btn btn-primary" type="reset" value="Reset">
-
-                            </div>
-                        </div>
-                    </div>
                 </form>
 
             </div>
             <br>
             <br>
             <div class="modal-footer">
+                <div class="mx-auto" style="width: 400px;">
+
+                    <div class="form-group row">
+                        <div class="col-sm-10">
+                            <input type="button" ng-disabled="myForm.name.$dirty && myForm.name.$invalid ||
+      myForm.email.$dirty && myForm.email.$invalid ||myForm.age.$dirty && myForm.age.$invalid ||myForm.university.$dirty && myForm.university.$invalid
+       ||myForm.department.$dirty && myForm.department.$invalid ||myForm.password.$dirty && myForm.password.$invalid"
+                                   class="btn btn-primary" value="Save" ng-click="Save()"/>
+                            <input class="btn btn-primary" type="reset" value="Reset">
+
+                        </div>
+                    </div>
+                </div>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
         </div>
