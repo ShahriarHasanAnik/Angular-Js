@@ -15,7 +15,6 @@ app.controller('MyController', function($scope, $localStorage, $sessionStorage, 
     enableGridMenu: true,
     showColumnFooter: true,
 
-
     columnDefs: [
 
       {

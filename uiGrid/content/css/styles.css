@@ -65,7 +65,7 @@ height: 200px;
 .highcharts-data-table tr:hover {
   background: #f1f7ff;
 }*/
-
+p.outset {border-style: outset;}
 
 .ui-grid {
   border: 1px solid #94c0d2;
