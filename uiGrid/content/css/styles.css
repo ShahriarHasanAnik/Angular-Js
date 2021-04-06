@@ -1,4 +1,4 @@
-.dialogdemoBasicUsage #popupContainer {
+/*.dialogdemoBasicUsage #popupContainer {
   position: relative; }
 
 .dialogdemoBasicUsage .footer {
@@ -64,7 +64,8 @@ height: 200px;
 }
 .highcharts-data-table tr:hover {
   background: #f1f7ff;
-}
+}*/
+
 
 .ui-grid {
   border: 1px solid #94c0d2;
