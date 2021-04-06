@@ -30,10 +30,15 @@
 <body ng-app="MyApp">
 
 <div ng-controller="MyController">
-    <button ng-click="hchart()" type="button" class="btn btn-dark">Show High Chart</button>
+
+    <button ng-click="choose('bar')" type="button" class="btn btn-dark">Bar chart</button>
+    <button ng-click="choose('pie')" type="button" class="btn btn-dark">pie chart</button>
+    <button ng-click="choose('line')" type="button" class="btn btn-dark">line chart</button>
+    <button ng-click="choose('scatter')" type="button" class="btn btn-dark">Scatter chart</button>
     <figure class="highcharts-figure">
         <div id="container"></div>
     </figure>
+
 </div>
 
 <div ng-controller="SecondController">

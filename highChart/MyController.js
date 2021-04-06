@@ -2,14 +2,16 @@ app.controller('MyController', function($scope,$rootScope, $localStorage, $sessi
 
 var highArray=[1,22,3,4,5,6,6];
 
-$scope.hchart=function()
+$scope.choose=function(para)
 {
+$scope.param = para
+console.log($scope.param);
 Highcharts.chart('container', {
   chart: {
     plotBackgroundColor: null,
     plotBorderWidth: null,
-    plotShadow: false,
-    type: 'pie'
+    plotShadow: true,
+    type: $scope.param
   },
   title: {
     text: 'My Score As a Batsman'
@@ -58,7 +60,7 @@ Highcharts.chart('container', {
     }]
   }]
 });
-
 }
+
 
 });
