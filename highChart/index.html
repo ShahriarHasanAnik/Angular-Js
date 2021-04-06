@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html >
+<html>
 
 <head>
     <title>HighChart</title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/ngstorage/0.3.6/ngStorage.min.js"></script>
     <script src="http://ui-grid.info/release/ui-grid.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="http://ui-grid.info/release/ui-grid.css" type="text/css">
 
@@ -20,13 +21,23 @@
     <script src="https://code.highcharts.com/modules/accessibility.js"></script>
 
 
-    <script type="text/javascript" src="app.js"> </script>
+    <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="MyController.js"></script>
+    <script type="text/javascript" src="SecondController.js"></script>
 
 </head>
 
-<body ng-app="MyApp" ng-controller="MyController">
+<body ng-app="MyApp">
 
-<figure class="highcharts-figure">
-    <div id="container"></div>
-</figure>
+<div ng-controller="MyController">
+    <button ng-click="hchart()" type="button" class="btn btn-dark">Show High Chart</button>
+    <figure class="highcharts-figure">
+        <div id="container"></div>
+    </figure>
+</div>
+
+<div-- ng-controller="SecondController">
+
+
+</div>
 </body>
