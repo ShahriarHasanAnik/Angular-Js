@@ -11,5 +11,8 @@ app.config(function($routeProvider) {
   .when("/highChartController", {
     templateUrl : "highChartController.html",
     controller : "highChartController.js"
-  });
+  })
+  .otherwise({
+      template : "<h1>Nothing has been selected</h1>"
+    });
 });
