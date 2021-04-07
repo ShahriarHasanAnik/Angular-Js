@@ -1,38 +1,17 @@
 app.controller('MyController', function($scope,$rootScope, $localStorage, $sessionStorage, $window, $http, uiGridConstants) {
 
-$scope.choose=function(para)
+
+
+$scope.choose=function(_type,_id,_data)
 {
-var highArray=[];
 var param="";
-$scope.param = para
-if($scope.param=="bar")
-{
-highArray.push(1,2,3,4,5,6);
-console.log(highArray);
-}
-else if($scope.param=="pie")
-{
-highArray.push(5,7,3,34,5,6);
-console.log(highArray);
-}
-else if($scope.param=="scatter")
-{
-highArray.push(5,7,5,34,4,6);
-console.log(highArray);
-}
-else if($scope.param=="areaspline")
-{
-highArray.push(5,7,5,34.4,100,6);
-console.log(highArray);
-}
-else if($scope.param=="line")
-{
-highArray.push(102,1,5,34.4,100,6);
-console.log(highArray);
-}
+var id="";
+$scope.param = _type;
+$scope.id = _id;
+console.log(_data);
 console.log($scope.param);
 
-Highcharts.chart('container', {
+Highcharts.chart($scope.id, {
   chart: {
     plotBackgroundColor: null,
     plotBorderWidth: null,
@@ -65,24 +44,24 @@ Highcharts.chart('container', {
     colorByPoint: true,
     data: [{
       name: '1st match',
-      y: highArray[0],
+      y: _data[0],
       sliced: true,
       selected: true
     }, {
       name: '2nd match',
-      y:  highArray[1]
+      y:  _data[1]
     }, {
       name: '3rd match',
-      y:  highArray[2]
+      y:  _data[2]
     }, {
       name: '4th match',
-      y:  highArray[3]
+      y:  _data[3]
     }, {
       name: '5th match',
-      y:  highArray[4]
+      y:  _data[4]
     }, {
       name: '6th match',
-      y:  highArray[5]
+      y:  _data[5]
     }]
   }]
 });
