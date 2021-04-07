@@ -1,5 +1,4 @@
-app.controller('MyController', function($scope,$rootScope, $localStorage, $sessionStorage, $window, $http, uiGridConstants) {
-
+app.controller('highChartController', function($scope, $localStorage, $sessionStorage, $window, $http, uiGridConstants) {
 
 $scope.choose=function(_type,_id,_data)
 {
@@ -65,6 +64,5 @@ Highcharts.chart($scope.id, {
   }]
 });
 }
-
 
 });
